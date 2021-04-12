@@ -9,3 +9,6 @@ class Post(db.model):
     content = db.Column(db.Text, nullable=False)
     posted_by = db.Column(db.String(32), nullable=False, default="MissingNo")
     posted_on = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow)
+
+    def __repr__(self):
+        return self.title
