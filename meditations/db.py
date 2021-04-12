@@ -1,2 +1,1 @@
 from .extensions import db
-
