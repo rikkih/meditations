@@ -1,7 +1,11 @@
-# meditations
+# Meditations & Perceptions
 A web logging application built with python.
 
-# TODO:
+## How to run locally
+TODO
+
+
+## To Do:
  - Dockerfile for flask run
  - Create a new user for the container
  - Add Dockerfile build to service in docker-compose.yml
