@@ -1,7 +1,7 @@
 import logging
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 from .extensions import db
 
@@ -26,7 +26,7 @@ def create_app(test_config=None):
 
     @app.route("/home")
     def home():
-        return "Meditations & Perspection"
+        return render_template("index.html")
 
     return app
 
