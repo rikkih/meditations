@@ -1,6 +1,10 @@
 version: "3.1"
 
 services:
+  web:
+    build: .
+    depends_on:
+      - db
   db:
     image: postgres:13-alpine
     restart: always
