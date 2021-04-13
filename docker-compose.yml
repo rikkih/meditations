@@ -1,10 +1,19 @@
 version: "3.1"
 
 services:
+
   web:
-    build: .
+    build: ./meditations
     depends_on:
       - db
+    environment:
+      - FLASK_APP: meditations
+      - FLASK_ENV: development
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./meditations:/home/app
+
   db:
     image: postgres:13-alpine
     restart: always
@@ -17,4 +26,5 @@ services:
       pgdata:/var/lib/postgresql/data
 
 volumes:
+
   pgdata:
