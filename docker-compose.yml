@@ -6,9 +6,8 @@ services:
     build: ./meditations
     depends_on:
       - db
-    environment:
-      - FLASK_APP=${FLASK_APP}
-      - FLASK_ENV=${FLASK_ENV}
+    env_file:
+      - secrets.env
     ports:
       - "5000:5000"
     volumes:
@@ -17,9 +16,8 @@ services:
   db:
     image: postgres:13-alpine
     restart: always
-    environment:
-      - POSTGRES_PASSWORD=${PG_PASSWORD}
-      - POSTGRES_USER=root
+    env_file:
+      - secrets.env
     ports:
       - "5432:5432"
     volumes:
