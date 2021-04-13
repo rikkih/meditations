@@ -12,3 +12,5 @@ TODO
 
  - Carry on going over https://www.codespeedy.com/how-to-build-a-blogging-website-in-python-with-flask/
  - Add SQLALCHEMYDATABASEURI to app for database connection
+ 
+ - ADD finishing bits to Dockerfile. Get the docker container to recognise where the app factory is so this can be used with flask_app and run

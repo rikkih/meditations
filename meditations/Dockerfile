@@ -4,9 +4,13 @@ RUN useradd -m -r -u 1000 -U app
 USER app
 WORKDIR /home/app
 
-COPY ./requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
-EXPOSE 5000
+COPY . ./meditations
+RUN pip install --upgrade pip && pip install -r ./meditations/requirements.txt
 
-CMD ["python", "-m", "flask", "run"]
+ENV FLASK_APP=meditations
+ENV PATH=/home/app/.local/bin:$PATH
 
+RUN ls
+RUN pwd
+
+CMD ["python", "__init__.py"]
