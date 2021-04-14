@@ -10,5 +10,5 @@ A web logging application built with python.
  - `localhost:5000/home`
 
 ## To Do:
- - Add SQLALCHEMY DATABASE URI to app for database connection.
+ - Add `SQLALCHEMY_DATABASE_URI` to app for database connection.
  
