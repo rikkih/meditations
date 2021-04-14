@@ -2,15 +2,13 @@
 A web logging application built with python.
 
 ## How to run locally
-TODO
-
+1. Clone this repository.
+2. Ensure `docker` and `docker-compose` are installed on your machine.
+3. In the base directory, run the `start_container.sh` script:
+ - `./start_containers.sh`
+4. Navigate to any URL defined in the API layer (OpenAPI docs to come soon!). For example:
+ - `localhost:5000/home`
 
 ## To Do:
- - Dockerfile for flask run
- - Create a new user for the container
- - Add Dockerfile build to service in docker-compose.yml
-
- - Carry on going over https://www.codespeedy.com/how-to-build-a-blogging-website-in-python-with-flask/
- - Add SQLALCHEMYDATABASEURI to app for database connection
+ - Add SQLALCHEMY DATABASE URI to app for database connection.
  
- - ADD finishing bits to Dockerfile. Get the docker container to recognise where the app factory is so this can be used with flask_app and run
