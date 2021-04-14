@@ -1,7 +1,6 @@
 version: "3.1"
 
 services:
-
   web:
     build: ./meditations
     depends_on:
@@ -11,8 +10,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./meditations:/home/app
-
+      - ./meditations:/home/app/meditations
   db:
     image: postgres:13-alpine
     restart: always
@@ -24,5 +22,5 @@ services:
       - pgdata:/var/lib/postgresql/data
 
 volumes:
-
   pgdata:
+
