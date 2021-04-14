@@ -11,4 +11,5 @@ A web logging application built with python.
 
 ## To Do:
  - Add `SQLALCHEMY_DATABASE_URI` environment variable populated with secrets.
- 
+ - Incorporate `Flask-Migrate` for database migrations.
+ - Take a look at Miguel Grinber's Flask Mega Tutorial to see how he deals with FlaskSQLAlchemy and Flask's Application Factory Function.

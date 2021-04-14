@@ -7,6 +7,8 @@ class Post(db.model):
     """Blog Post Model for a users posts. This is initially linked to a
     string, but a backref to a user will be added later.
     """
+    __tablename__ = "post"
+
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(128), nullable=False, unique=True)
     content = db.Column(db.Text, nullable=False)
