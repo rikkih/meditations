@@ -16,7 +16,6 @@ def create_app() -> Flask:
     app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 
     db.init_app(app)
-    db.create_all()
 
     try:
         os.makedirs(app.instance_path)

@@ -7,7 +7,6 @@ WORKDIR /home/app
 COPY . ./meditations
 RUN pip install --upgrade pip && pip install -r ./meditations/requirements.txt
 
-ENV FLASK_APP=meditations
 ENV PATH=/home/app/.local/bin:$PATH
 
 CMD ["flask", "run", "--host", "0.0.0.0"]
