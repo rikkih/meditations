@@ -15,3 +15,4 @@ A web logging application built with python.
  - Take a look at Miguel Grinber's Flask Mega Tutorial to see how he deals with FlaskSQLAlchemy and Flask's Application Factory Function.
  - Design compartments with Blueprints.
  - Decide on design pattern for registering extnesions and compartments.
+ - Look up how to incorporate bootstrap.
