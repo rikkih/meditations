@@ -3,17 +3,14 @@ import os
 
 from flask import Flask, render_template
 
+from config import Config
 from meditations.db import db
-
-SQLALCHEMY_DATABASE_URI = os.environ["SQLALCHEMY_DATABASE_URI"]
 
 
 def create_app() -> Flask:
     """Application Factory for the Flask.application instance."""
     app = Flask(__name__, instance_relative_config=True)
-
-    app.config.from_mapping(SECRET_KEY="dev")
-    app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+    app.config.from_object(Config)
 
     db.init_app(app)
 
@@ -27,4 +24,3 @@ def create_app() -> Flask:
         return render_template("index.html")
 
     return app
-
