@@ -133,3 +133,4 @@ dmypy.json
 
 # Meditation Custom
 secrets.env
+secrets.sh
