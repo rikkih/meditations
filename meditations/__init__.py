@@ -4,7 +4,7 @@ import os
 from flask import Flask, render_template
 
 from meditations.config import Config
-from meditations.models import db, Post
+from meditations.models import db
 
 
 def create_app() -> Flask:
