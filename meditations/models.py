@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-class Post(db.model):
+class Post(db.Model):
     """Blog Post Model for a users posts. This is initially linked to a
     string, but a backref to a user will be added later.
     """
