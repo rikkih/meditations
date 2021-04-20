@@ -14,6 +14,9 @@ def create_app() -> Flask:
 
     db.init_app(app)
 
+    with app.app_context():
+        db.create_all()
+
     try:
         os.makedirs(app.instance_path)
     except OSError as e:
