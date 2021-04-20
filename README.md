@@ -12,7 +12,7 @@ A web logging application built with python.
 ## To Do:
  - Add instructions on what to include in a contributor's environment variables to be able to run locally.
  - Incorporate `Flask-Migrate` for database migrations.
- - Take a look at Miguel Grinber's Flask Mega Tutorial to see how he deals with FlaskSQLAlchemy and Flask's Application Factory Function.
  - Design compartments with Blueprints.
  - Decide on design pattern for registering extnesions and compartments.
  - Look up how to incorporate bootstrap.
+ - Revise TMux for multiplexing the fucking terminal for running app, making requests, and viewing logs.
