@@ -17,5 +17,4 @@ A web logging application built with python.
  - Design compartments with Blueprints.
  - Decide on design pattern for registering extnesions and compartments.
  - Look up how to incorporate bootstrap.
- - Revise TMux for multiplexing the fucking terminal for running app, making requests, and viewing logs.
  - Look at `networks` for `docker-compose` and easily allowing inter-container communications without environment variabling the container name.
