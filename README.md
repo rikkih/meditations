@@ -18,3 +18,5 @@ A web logging application built with python.
  - Decide on design pattern for registering extnesions and compartments.
  - Look up how to incorporate bootstrap.
  - Look at `networks` for `docker-compose` and easily allowing inter-container communications without environment variabling the container name.
+ - Consider creating two sub-modules for `Users` and `Posts`.
+ 
