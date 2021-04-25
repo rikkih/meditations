@@ -5,6 +5,7 @@ from flask import Flask, render_template
 
 from meditations.config import Config
 from meditations.models import db
+from meditations import views
 
 
 def create_app() -> Flask:
@@ -14,6 +15,8 @@ def create_app() -> Flask:
 
     db.init_app(app)
 
+    app.register_blueprint(views.blueprint)
+
     with app.app_context():
         db.create_all()
 
@@ -21,9 +24,5 @@ def create_app() -> Flask:
         os.makedirs(app.instance_path)
     except OSError as e:
         logging.warning(f"Instance Path Initialization Error: {e}")
-
-    @app.route("/home")
-    def home():
-        return render_template("index.html")
 
     return app
