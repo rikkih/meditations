@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+</head>
+
+<body>
+    <h1>New Post:</h1>
+    <hr>
+    <h2>New Post:</h2>
+    <form action="/posts" method="POST">
+        <label for="title">Title:</label>
+        <input class="form-control" type="text" name="title" id="title" placeholder="Enter Title"
+            aria-label="Enter Title">
+        <br>
+        <label for="content">Author:</label>
+        <input class="form-control" type="text" name="author" id="author" placeholder="Enter Author"
+            aria-label="Enter Author">
+        <br>
+        <label for="post">Post:</label>
+        <textarea class="form-control" id="post" name="post" placeholder="Enter Content" aria-label="Enter Content"
+            rows="3"></textarea>
+        <br>
+        <input type="submit" value="Post">
+    </form>
+    <hr>
+</body>
+
+</html>
