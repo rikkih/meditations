@@ -13,10 +13,9 @@ A web logging application built with python.
 
 ## To Do:
  - Add instructions on what to include in a contributor's environment variables to be able to run locally.
- - Incorporate `Flask-Migrate` for database migrations.
- - Design compartments with Blueprints.
- - Decide on design pattern for registering extnesions and compartments.
- - Look up how to incorporate bootstrap.
+ - Incorporate `Flask-Migrate` or `alembic` for database migrations.
+ - Design compartments with Blueprints, such as a directory for `Users` and `Posts` with models, views.
+ - Decide on design pattern for registering extensions and blueprints.
+ - Incorporate Bootstrap immediately to template structure.
+ - Go over M.G's first few chapters.
  - Look at `networks` for `docker-compose` and easily allowing inter-container communications without environment variabling the container name.
- - Consider creating two sub-modules for `Users` and `Posts`.
- 
