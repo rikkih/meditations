@@ -27,4 +27,19 @@ def create_post():
         db.commit()
         return redirect("/posts")
     else:
-        return render_template("new_post.html")
+        return render_template("new_post.html", posts=posts)
+
+
+@blueprint.route('/posts',  methods=['GET', 'POST'])
+def get_posts():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['post']
+        author = request.form['author']
+        post = Post(title=title, content=content, author=author)
+        db.add(post)
+        db.commit()
+        return redirect('/posts')
+    else:
+        posts = Post.query.order_by(Post.date).all()
+        return render_template('posts.html', posts=all_posts)
