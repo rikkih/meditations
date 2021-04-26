@@ -19,3 +19,8 @@ A web logging application built with python.
  - Incorporate Bootstrap immediately to template structure.
  - Go over M.G's first few chapters.
  - Look at `networks` for `docker-compose` and easily allowing inter-container communications without environment variabling the container name.
+ - Sort out URL's, logical combinations of these, and the homepage being the list of all posts.
+ - Pagination.
+ - Authorisation and logging in.
+ - Flask Forms for Requests.
+ - Use GitHub Issues for this bloody To Do section in the Readme.MD!!!
