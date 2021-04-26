@@ -62,6 +62,6 @@ def update_post(id):
 @blueprint.route('/posts/delete/<int:id>')
 def delete_post(id):
     post = Post.query.get_or_404(id)
-    db.session.delete(to_delete)
+    db.session.delete(post)
     db.session.commit()
     return redirect('/posts')
