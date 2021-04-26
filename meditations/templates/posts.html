@@ -16,6 +16,7 @@
         
         <br>
         <hr>
+
         {% for post in posts %}
         <h2>{{post.title}}</h2>
 
@@ -24,7 +25,7 @@
         {% else %}
         <small>Author: Anonymous on {{post.date}}</small>
         {% endif %}
-        
+
         <p style="white-space: pre-wrap">{{post.content}}</p>
         <br>
         <a href="/posts/delete/{{post.id}}">

@@ -56,3 +56,11 @@ def update_post(id):
         return redirect("/posts")
     else:
         return render_template("edit.html", post=post)
+
+
+@blueprint.route('/posts/delete/<int:id>')
+def delete_post(id):
+    post = Post.query.get_or_404(id)
+    db.delete(to_delete)
+    db.commit()
+    return redirect('/posts')
