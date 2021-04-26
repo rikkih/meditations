@@ -27,7 +27,7 @@ def create_post():
         db.commit()
         return redirect("/posts")
     else:
-        return render_template("new_post.html", posts=posts)
+        return render_template("new_post.html")
 
 
 @blueprint.route('/posts',  methods=['GET', 'POST'])
