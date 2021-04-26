@@ -30,7 +30,7 @@ def create_post():
         return render_template("new_post.html")
 
 
-@blueprint.route('/posts',  methods=['GET', 'POST'])
+@blueprint.route("/posts",  methods=["GET", "POST"])
 def get_posts():
     if request.method == 'POST':
         title = request.form['title']
@@ -42,4 +42,17 @@ def get_posts():
         return redirect('/posts')
     else:
         posts = Post.query.order_by(Post.date).all()
-        return render_template('posts.html', posts=all_posts)
+        return render_template('posts.html', posts=posts)
+
+
+@blueprint.route("/posts/edit/<int:id>", methods=["GET", "POST"])
+def update_post(id):
+    post = Post.query.get_or_404(id)
+    if request.method == "POST":
+        post.title = request.form["title"]
+        post.author = request.form["author"]
+        post.content = request.form["post"]
+        db.commit()
+        return redirect("/posts")
+    else:
+        return render_template("edit.html", post=post)
