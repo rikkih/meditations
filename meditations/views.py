@@ -1,5 +1,6 @@
 from flask import Blueprint, redirect, render_template, request
 
+from meditations import db
 from meditations.models import Post
 
 blueprint = Blueprint(
@@ -23,8 +24,8 @@ def create_post():
         content = request.form["post"]
         author = request.form["author"]
         post = Post(title=title, content=content, author=author)
-        db.add(post)
-        db.commit()
+        db.session.add(post)
+        db.session.commit()
         return redirect("/posts")
     else:
         return render_template("new_post.html")
@@ -37,8 +38,8 @@ def get_posts():
         content = request.form['post']
         author = request.form['author']
         post = Post(title=title, content=content, author=author)
-        db.add(post)
-        db.commit()
+        db.session.add(post)
+        db.session.commit()
         return redirect('/posts')
     else:
         posts = Post.query.order_by(Post.date).all()
@@ -52,7 +53,7 @@ def update_post(id):
         post.title = request.form["title"]
         post.author = request.form["author"]
         post.content = request.form["post"]
-        db.commit()
+        db.session.commit()
         return redirect("/posts")
     else:
         return render_template("edit.html", post=post)
@@ -61,6 +62,6 @@ def update_post(id):
 @blueprint.route('/posts/delete/<int:id>')
 def delete_post(id):
     post = Post.query.get_or_404(id)
-    db.delete(to_delete)
-    db.commit()
+    db.session.delete(to_delete)
+    db.session.commit()
     return redirect('/posts')
