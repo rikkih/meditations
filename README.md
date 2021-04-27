@@ -25,3 +25,4 @@ A web logging application built with python.
  - Flask Forms for Requests.
  - Use GitHub Issues for this bloody To Do section in the Readme.MD!!!
  - Look at connexion and any alternatives for alternatives to Flask with benefits.
+ - Type Annotations!
