@@ -1,43 +1,39 @@
-<html lang="en">
+{% extends "base.html" %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Meditations</title>
-    </head>
+{% block head %}
+    <title>Meditations</title>
+{% endblock %}
 
-    <body>
+{% block body %}
+    <br>
+    <div>
+        <h1 style="display: inline">All meditations and perceptions: </h1>
+        <a style="display: inline" class="btn btn-success float-right" href="/posts/new">New Meditation</a>
+    </div>
 
-        <br>
-        <div>
-            <h1 style="display: inline">All meditations and perceptions: </h1>
-            <a style="display: inline" class="btn btn-success float-right" href="/posts/new">New Meditation</a>
-        </div>
-        
-        <br>
-        <hr>
+    <br>
+    <hr>
 
-        {% for post in posts %}
-        <h2>{{post.title}}</h2>
+    {% for post in posts %}
+    <h2>{{post.title}}</h2>
 
-        {% if post.author %}
-        <small>Author: {{post.author}} on {{post.date}}</small>
-        {% else %}
-        <small>Author: Anonymous on {{post.date}}</small>
-        {% endif %}
+    {% if post.author %}
+    <small>Author: {{post.author}} on {{post.date}}</small>
+    {% else %}
+    <small>Author: Anonymous on {{post.date}}</small>
+    {% endif %}
 
-        <p style="white-space: pre-wrap">{{post.content}}</p>
-        <br>
-        <a href="/posts/delete/{{post.id}}">
-            <img src="https://qph.fs.quoracdn.net/main-qimg-83c6de25ed91d13a4f09fb5f11ca8853" height="50px" width="50px">
-        </a>
-        <a href="/posts/update/{{post.id}}">
-            <img src="https://www.2g-eng.com/wp-content/uploads/2016/01/design-engineering-icon-small.png" height="50px" width="50px">
-        </a>
+    <p style="white-space: pre-wrap">{{post.content}}</p>
+    <br>
+    <a href="/posts/delete/{{post.id}}">
+        <img src="https://qph.fs.quoracdn.net/main-qimg-83c6de25ed91d13a4f09fb5f11ca8853" height="50px" width="50px">
+    </a>
+    <a href="/posts/update/{{post.id}}">
+        <img src="https://www.2g-eng.com/wp-content/uploads/2016/01/design-engineering-icon-small.png" height="50px" width="50px">
+    </a>
 
-        <hr>
-        {% endfor %}
-
-    </body>
+    <hr>
+    {% endfor %}
+{% endblock %}
 
 </html>
