@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, render_template, request
+from flask import Blueprint, redirect, render_template, request, Response
 
 from meditations import db
 from meditations.models import Post
@@ -47,7 +47,7 @@ def get_posts():
 
 
 @blueprint.route("/posts/edit/<int:id>", methods=["GET", "POST"])
-def update_post(id):
+def update_post(id: int):
     post = Post.query.get_or_404(id)
     if request.method == "POST":
         post.title = request.form["title"]
@@ -60,7 +60,7 @@ def update_post(id):
 
 
 @blueprint.route('/posts/delete/<int:id>')
-def delete_post(id):
+def delete_post(id: int) -> Response:
     post = Post.query.get_or_404(id)
     db.session.delete(post)
     db.session.commit()
