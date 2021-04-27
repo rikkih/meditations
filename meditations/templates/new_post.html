@@ -1,12 +1,10 @@
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block head %}
     <title>New Meditation</title>
-</head>
+{% endblock %}
 
-<body>
+{% block body %}
     <h1>New Meditation:</h1>
     <hr>
     <h2>Meditation:</h2>
@@ -26,6 +24,4 @@
         <input type="submit" value="Post">
     </form>
     <hr>
-</body>
-
-</html>
+{% endblock %}

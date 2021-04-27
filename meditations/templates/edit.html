@@ -1,28 +1,24 @@
-<html lang="en">
+{% extends "base.html" %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Post</title>
-    </head>
+{% block head %}
+    <title>Reshape your meditation</title>
+{% endblock %}
 
-    <body>
-        <h1>Editing Post: </h1>
-        <hr>
-        <h2>Edit:</h2>
-        <form action="/posts/edit/{{post.id}}" method="POST">
-            <label for="content">Title:</label>
-            <input class="form-control" type="text" name="title" id="title" value="{{post.title}}">
-            <br>
-            <label for="content">Author:</label>
-            <input class="form-control" type="text" name="author" id="author" value="{{post.date}}">
-            <br>
-            <label for="post">Meditation:</label>
-            <textarea class="form-control" id="post" name="post" rows="3">{{post.content}}</textarea>
-            <br>
-            <input type="submit" value="Save">
-        </form>
-        <hr>
-    </body>
-
-</html>
+{% block body %}
+    <h1>Reshaping Meditation: </h1>
+    <hr>
+    <h2>Form:</h2>
+    <form action="/posts/edit/{{post.id}}" method="POST">
+        <label for="content">Title:</label>
+        <input class="form-control" type="text" name="title" id="title" value="{{post.title}}">
+        <br>
+        <label for="content">Author:</label>
+        <input class="form-control" type="text" name="author" id="author" value="{{post.date}}">
+        <br>
+        <label for="post">Meditation:</label>
+        <textarea class="form-control" id="post" name="post" rows="3">{{post.content}}</textarea>
+        <br>
+        <input type="submit" value="Save">
+    </form>
+    <hr>
+{% endblock %}
