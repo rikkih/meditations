@@ -11,12 +11,6 @@ blueprint = Blueprint(
 )
 
 
-@blueprint.route("/")
-@blueprint.route("/home")
-def landing_page():
-    return render_template("index.html")
-
-
 @blueprint.route("/posts/new", methods=["GET", "POST"])
 def create_post():
     if request.method == "POST":
@@ -31,6 +25,7 @@ def create_post():
         return render_template("new_post.html")
 
 
+@blueprint.route("/", methods=["GET", "POST"])
 @blueprint.route("/posts",  methods=["GET", "POST"])
 def get_posts():
     if request.method == 'POST':
