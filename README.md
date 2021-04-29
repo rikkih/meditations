@@ -24,3 +24,5 @@ A web logging application built with python.
  - Use GitHub Issues for this bloody To Do section in the Readme.MD!!!
  - Add a CI pipeline with a testing suite for integration tests in a testing orchestrain suite.
  - Add a quick test command for unit tests.
+ - Look at connexion and any alternatives for alternatives to Flask with benefits.
+ - Sort out this bloody instance path in relation to the app's config.
