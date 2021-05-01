@@ -6,9 +6,7 @@ db = SQLAlchemy()
 
 
 class Post(db.Model):
-    """Blog Post Model for a users posts. This is initially linked to a
-    string, but a backref to a user will be added later.
-    """
+    """Blog Post Model for a users posts."""
     __tablename__ = "post"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -18,4 +16,19 @@ class Post(db.Model):
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
-        return self.title
+        return f"<Post {self.title}>"
+
+
+class User(db.Model):
+    """User Model for a user profile. A user will initially be able to create
+    a Post on the blog page.
+    """
+    __tablename__ = "user"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), index=True, unique=True)
+    password_hash = db.Column(db.String(128))
+
+    def __repr__(self):
+        return f"<User {self.name}>"
+
