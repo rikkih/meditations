@@ -12,17 +12,12 @@ A web logging application built with python.
  - `localhost:5000/home`
 
 ## To Do:
- - Add instructions on what to include in a contributor's environment variables to be able to run locally.
- - Incorporate `Flask-Migrate` or `alembic` for database migrations.
  - Design compartments with Blueprints, such as a directory for `Users` and `Posts` with models, views.
- - Decide on design pattern for registering extensions and blueprints.
  - Look at `networks` for `docker-compose` and easily allowing inter-container communications without environment variabling the container name.
- - Sort out URL's, logical combinations of these, and the homepage being the list of all posts.
- - Pagination.
  - Authorisation and logging in.
  - Flask Forms for Requests.
  - Use GitHub Issues for this bloody To Do section in the Readme.MD!!!
  - Add a CI pipeline with a testing suite for integration tests in a testing orchestrain suite.
  - Add a quick test command for unit tests.
- - Look at connexion and any alternatives for alternatives to Flask with benefits.
- - Sort out this bloody instance path in relation to the app's config.
+ - Add flask db commands for local and docker compose environments with their respective dbs.
+ - Argue whether connexion is a good tool to use for full stack development or whether this is better for backend API's.
