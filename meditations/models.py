@@ -1,8 +1,10 @@
 from datetime import datetime
 
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
+migrate = Migrate()
 
 
 class Post(db.Model):
@@ -31,4 +33,3 @@ class User(db.Model):
 
     def __repr__(self):
         return f"<User {self.name}>"
-
