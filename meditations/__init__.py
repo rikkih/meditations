@@ -8,10 +8,10 @@ from meditations.models import db, migrate
 from meditations import views
 
 
-def create_app() -> Flask:
+def create_app(config: Config) -> Flask:
     """Application Factory for the Flask.application instance."""
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_object(Config)
+    app.config.from_object(config)
 
     db.init_app(app)
     migrate.init_app(app, db)
