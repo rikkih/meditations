@@ -4,7 +4,7 @@ import os
 from flask import Flask, render_template
 
 from meditations.config import Config
-from meditations.models import db
+from meditations.models import db, migrate
 from meditations import views
 
 
@@ -14,6 +14,7 @@ def create_app() -> Flask:
     app.config.from_object(Config)
 
     db.init_app(app)
+    migrate.init_app(app, db)
 
     app.register_blueprint(views.blueprint)
 
