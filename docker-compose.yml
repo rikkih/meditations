@@ -9,6 +9,8 @@ services:
       - dev.env
     ports:
       - "5000:5000"
+    entrypoint:
+      - /home/app/meditations/scripts/entrypoint.sh
     volumes:
       - ./meditations:/home/app/meditations
   db:
