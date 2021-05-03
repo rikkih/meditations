@@ -1,14 +1,12 @@
 from datetime import datetime
 
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
-db = SQLAlchemy()
-migrate = Migrate()
+from meditations.extensions import db
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     """User Model for a user profile. A user will initially be able to create
     a Post on the blog page.
     """
@@ -30,15 +28,6 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)
 
 
-class Post(db.Model):
-    """Blog Post Model for a users posts."""
-    __tablename__ = "post"
-
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(128), nullable=False, unique=True)
-    content = db.Column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-
-    def __repr__(self):
-        return f"<Post {self.title}>"
+@login.user_loader
+def load_user(id) -> int:
+    return User.query.get(int(id))

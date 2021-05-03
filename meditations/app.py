@@ -1,6 +1,5 @@
-from meditations import create_app
+from meditations import auth, create_app, db, posts
 from meditations.config import Config
-from meditations.models import db, migrate, Post, User
 
 app = create_app(Config)
 
@@ -9,6 +8,6 @@ app = create_app(Config)
 def make_shell_context():
     return {
         "db": db,
-        "Post": Post,
-        "User": User
+        "Post": auth.models.User,
+        "User": posts.models.Post
     }
