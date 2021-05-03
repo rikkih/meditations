@@ -5,7 +5,6 @@ USER app
 WORKDIR /home/app
 
 COPY . ./meditations
-COPY ./migrations ./migrations
 RUN pip install --upgrade pip && pip install -r ./meditations/requirements.txt
 
 ENV PATH=/home/app/.local/bin:$PATH
