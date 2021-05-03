@@ -30,7 +30,6 @@ A web logging application built with python.
 │   ├── Dockerfile
 │   ├── extensions.py
 │   ├── __init__.py
-│   ├── meditations.db
 │   └── requirements.txt
 ├── tests
 │   ├── conftest.py
