@@ -76,7 +76,7 @@ $ source env/bin/activate
 (env) $ flask run
 ```
 
--  In the base directory, run the `start_containers.sh` script (It's very simple. Feel free to inspect that and also the subsequent `meditations/start.sh` script for the meditations container):
+-  In the base directory, run the `start_containers.sh` script (It's very simple. Feel free to inspect that and also the subsequent `meditations/scripts/start.sh` script for the meditations container):
 ```
 $ ./start_containers.sh
 ```
