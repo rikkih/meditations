@@ -1,5 +1,8 @@
-from flask import Blueprint
-from flask_login import current_user
+from flask import Blueprint, render_template
+from flask_login import current_user, login_user
+
+from meditations.auth.forms import LoginForm
+from meditations.auth.models import User
 
 blueprint = Blueprint(
     "auth",
@@ -10,5 +13,4 @@ blueprint = Blueprint(
 
 @blueprint.route("/login", methods=["GET", "POST"])
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for("posts"))
+    return render_template("login.html", form=LoginForm())

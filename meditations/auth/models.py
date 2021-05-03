@@ -3,7 +3,7 @@ from datetime import datetime
 from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from meditations.extensions import db
+from meditations.extensions import db, login_manager
 
 
 class User(UserMixin, db.Model):
@@ -28,6 +28,6 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 
-@login.user_loader
+@login_manager.user_loader
 def load_user(id) -> int:
     return User.query.get(int(id))

@@ -37,3 +37,4 @@ def register_extensions(app: Flask) -> None:
     """Handles the registering of the Flask extension packages"""
     db.init_app(app)
     migrate.init_app(app, db)
+    login_manager.init_app(app)
