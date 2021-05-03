@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, flash, redirect, render_template, url_for
 from flask_login import current_user, login_user
 
 from meditations.auth.forms import LoginForm
@@ -13,4 +13,11 @@ blueprint = Blueprint(
 
 @blueprint.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html", form=LoginForm())
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash(
+            f"Login Requested.\n User: {form.username.data}\n"
+            f"remember_me={form.remember_me.data}"
+        )
+        return redirect(url_for("posts.home"))
+    return render_template("login.html", form=form)
