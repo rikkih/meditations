@@ -29,7 +29,7 @@ def home():
 
 
 @blueprint.route("/posts/new", methods=["GET", "POST"])
-def create_post():
+def create():
     if request.method == "POST":
         title = request.form["title"]
         content = request.form["post"]
@@ -43,7 +43,7 @@ def create_post():
 
 
 @blueprint.route("/posts/edit/<int:id>", methods=["GET", "POST"])
-def update_post(id: int):
+def update(id: int):
     post = Post.query.get_or_404(id)
     if request.method == "POST":
         post.title = request.form["title"]
@@ -56,7 +56,7 @@ def update_post(id: int):
 
 
 @blueprint.route("/posts/delete/<int:id>")
-def delete_post(id: int) -> Response:
+def delete(id: int) -> Response:
     post = Post.query.get_or_404(id)
     db.session.delete(post)
     db.session.commit()

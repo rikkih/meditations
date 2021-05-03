@@ -8,7 +8,7 @@
     <h1>Reshaping Meditation</h1>
     <hr>
     <h2>What has changed?</h2>
-    <form action="{{ url_for('posts.update_post', id=post.id) }}" method="POST">
+    <form action="{{ url_for('posts.update', id=post.id) }}" method="POST">
         <label for="content">Title:</label>
         <input class="form-control" type="text" name="title" id="title" value="{{post.title}}">
         <br>
