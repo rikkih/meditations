@@ -67,7 +67,7 @@ $ source secrets.sh
 ```
 $ python -m venv <env>
 $ source <env>/bin/activate
-(<env>)$ python -m pip install -r meditations/requirements.txt
+(<env>) $ python -m pip install -r meditations/requirements.txt
 ```
 
 4.
