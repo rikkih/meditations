@@ -1,6 +1,49 @@
 # Meditations & Perceptions
 A web logging application built with python.
 
+# The logical structure of this application
+```
+.
+├── instance
+├── meditations
+│   ├── auth
+│   │   ├── forms.py
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   └── views.py
+│   ├── posts
+│   │   ├── forms.py
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   └── views.py
+│   ├── scripts
+│   │   ├── entrypoint.sh
+│   │   └── start.sh
+│   ├── templates
+│   │   ├── base.html
+│   │   ├── edit.html
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── new_post.html
+│   │   └── posts.html
+│   ├── app.py
+│   ├── config.py
+│   ├── Dockerfile
+│   ├── extensions.py
+│   ├── __init__.py
+│   ├── meditations.db
+│   └── requirements.txt
+├── tests
+│   ├── conftest.py
+│   ├── integration.py
+│   └── unit.py
+├── dev.env
+├── docker-compose.yml
+├── README.md
+├── secrets.sh
+└── start-containers.sh
+```
+
 ## How to run locally
 1. Clone this repository.
 
