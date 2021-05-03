@@ -4,7 +4,6 @@ A web logging application built with python.
 # The logical structure of this application
 ```
 .
-├── instance
 ├── meditations
 │   ├── auth
 │   │   ├── forms.py
@@ -40,7 +39,6 @@ A web logging application built with python.
 ├── dev.env
 ├── docker-compose.yml
 ├── README.md
-├── secrets.sh
 └── start-containers.sh
 ```
 
