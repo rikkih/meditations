@@ -65,15 +65,15 @@ $ source secrets.sh
 
 3. Create a virtual environment and install dependencies. N.B. This is only required if you are running the application outside of the container orchestration.
 ```
-$ python -m venv <env>
-$ source <env>/bin/activate
-(<env>) $ python -m pip install -r meditations/requirements.txt
+$ python -m venv env
+$ source env/bin/activate
+(env) $ python -m pip install -r meditations/requirements.txt
 ```
 
 4.
 -  If running outside of the container orchestration, just execute the following command, which is now executable in your virtual environment in the current shell context:
 ```
-$ flask run
+(env) $ flask run
 ```
 
 -  In the base directory, run the `start_containers.sh` script (It's very simple. Feel free to inspect that and also the subsequent `meditations/start.sh` script for the meditations container):
@@ -82,4 +82,4 @@ $ ./start_containers.sh
 ```
 
 5. Navigate to any URL defined in the API layer (OpenAPI docs to come soon!). For example:
- - `localhost:5000/home`
+ - `localhost:5000/`
