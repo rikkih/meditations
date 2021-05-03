@@ -8,6 +8,6 @@ app = create_app(Config)
 def make_shell_context():
     return {
         "db": db,
-        "Post": posts..models.Post,
+        "Post": posts.models.Post,
         "User": auth.models.User
     }
