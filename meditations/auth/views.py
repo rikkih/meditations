@@ -1,4 +1,4 @@
-from flask import Blueprint, flash, redirect, render_template
+from flask import Blueprint, flash, redirect, render_template, url_for
 from flask_login import current_user, login_user
 
 from meditations.auth.forms import LoginForm
@@ -19,5 +19,5 @@ def login():
             f"Login Requested.\n User: {form.username.data}\n"
             f"remember_me={form.remember_me.data}"
         )
-        return redirect("/")
+        return redirect(url_for("posts.home"))
     return render_template("login.html", form=form)
