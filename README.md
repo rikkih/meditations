@@ -1,6 +1,8 @@
 # Meditations & Perceptions
 A web logging application built with python.
 
+TODO: Add a bloody Makefile!!
+
 # The logical structure of this application
 ```
 .
